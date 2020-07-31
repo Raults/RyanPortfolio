@@ -1,11 +1,63 @@
-<div class="page-container" fxLayout="column">
-  <div class="header-image-container" fxLayout="row" fxLayoutAlign="center center">
-    <img src="../assets/travoltaislost.jpg">
+<div class="backdrop">
+  <div class="header-image-container"
+  fxLayout="row"
+  fxLayoutAlign="center center">
+    <div class="fade-left"><div></div></div>
+    <div class="header-image">
+      <div class="image-depth"></div>
+      <img src="../assets/travoltaislost.jpg">
+    </div>
     <div class="rotating-flavor" [style]="flavorSwap?'opacity:1':'opacity:0'">
       {{ flavorArrA[currentFlavorA] }}
     </div>
     <div class="rotating-flavor" [style]="flavorSwap?'opacity:0':'opacity:1'">
       {{ flavorArrB[currentFlavorB] }}
+    </div>
+    <div class="fade-right"><div></div></div>
+  </div>
+</div>
+
+<div class="page-container"
+gdAreas="header-image | page-content"
+gdRows="30rem 1fr">
+
+  <div
+  gdArea="header-image"
+  fxLayout="row"
+  fxLayoutAlign="center center">
+  </div>
+
+  <div class="page-content"
+  gdArea="page-content"
+  gdAreas="youtube linkedin github contact">
+    <div class="youtube"
+    gdArea="youtube"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+      <img src="../assets/youtube-fade.svg">
+      <img class="youtube-thumbnail" src="../assets/youtube.svg" >
+    </div>
+
+    <div class="linkedin"
+    gdArea="linkedin"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+      <img src="../assets/linkedin-fade.svg">
+      <img class="linkedin-thumbnail" src="../assets/linkedin.svg">
+    </div>
+
+    <div class="github"
+    gdArea="github"
+    fxLayout="column"
+    fxLayoutAlign="center center">
+      <img src="../assets/github-fade.svg">
+      <img class="github-thumbnail" src="../assets/github.svg">
+    </div>
+
+    <div class="contact"
+    gdArea="contact"
+    fxLayout="column"
+    fxLayoutAlign="center center">
     </div>
   </div>
 </div>

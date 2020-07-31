@@ -9,8 +9,8 @@ export class AppComponent {
   // title = 'ryanetibbetts';
   public currentFlavorA = 0;
   public currentFlavorB = 0;
-  public flavorArrA = ['Welcome', 'Imagine', 'Responsive', 'Greatful', 'Win Win Win No Matter What', 'Another One', 'And Another One'];
-  public flavorArrB = ['Breath', 'All Yours', 'Loyal', 'I Appreciate You', 'Another One', 'Another One', 'And Another One'];
+  public flavorArrA = ['Welcome', 'See Greatness', 'Responsive Design', 'Reasonable Pricing', 'Create Your Website', 'Now Is The Time'];
+  public flavorArrB = ['Have A Seat', 'AWS Technology', 'Angular 9', 'Reach Out Today', 'Create Your Dream'];
   public flavorSwap = true;
 
   ngOnInit() {
