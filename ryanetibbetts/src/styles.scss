@@ -1,52 +1,154 @@
+// Additional fonts
+
+// very wide
+@font-face {
+  font-family: aAtmospheric;
+  src: url("assets/fonts/aAtmospheric.ttf");
+}
+// stylish
+@font-face {
+  font-family: Averus;
+  src: url("assets/fonts/Averus.ttf");
+}
+@font-face {
+  font-family: Cyberpunks;
+  src: url("assets/fonts/Cyberpunks.ttf");
+}
+// very wide
+@font-face {
+  font-family: ethnocentric;
+  src: url("assets/fonts/ethnocentric.ttf");
+}
+// compact and stylish
+@font-face {
+  font-family: Fino;
+  src: url("assets/fonts/Fino.ttf");
+}
+// hard to read
+@font-face {
+  font-family: Horizon;
+  src: url("assets/fonts/Horizon.otf");
+}
+// very compact, A's are movie references, no-go
+@font-face {
+  font-family: mandalore;
+  src: url("assets/fonts/mandalore.ttf");
+}
+// numbers don't work, but stylish
+@font-face {
+  font-family: Nerik;
+  src: url("assets/fonts/Nerik-normal.ttf");
+}
+// easy to read, kind of wide, stylish
+@font-face {
+  font-family: omegaflight;
+  src: url("assets/fonts/omegaflight.ttf");
+}
+//compact, retro, very synthwave
+@font-face {
+  font-family: ROBOTECH;
+  src: url("assets/fonts/ROBOTECH.ttf");
+}
+//compact, retro, very synthwave
+@font-face {
+  font-family: lato;
+  src: url("assets/fonts/Lato-Regular.ttf");
+}
+// Material Edits
+.contact {
+  padding: 3rem 0 0 0;
+  button {
+    &.mat-flat-button,
+    &.mat-stroked-button,
+    &.mat-raised-button {
+      font-size: 10rem;
+      line-height: 8rem;
+      padding: .5rem 2rem 2rem 2rem;
+      transition: all 0.25s linear;
+      background: none;
+      color: linear-gradient(0deg, rgba(22,30,68,1) 0%, 100%);
+      font-family: ROBOTECH;
+    }
+  }
+}
+// Website SCSS
+body,
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  font-family: lato;
 }
 
 .depth {
-   -moz-box-shadow:    inset 0 0 1rem #000;
-   -webkit-box-shadow: inset 0 0 1rem #000;
-   box-shadow:         inset 0 0 1rem #000;
-   z-index: 1;
+  -moz-box-shadow: inset 0 0 1rem #000;
+  -webkit-box-shadow: inset 0 0 1rem #000;
+  box-shadow: inset 0 0 1rem #000;
+  z-index: 1;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0 1rem 0 rgba(0,0,0,1);
+  -moz-box-shadow: 0 0 1rem 0 rgba(0,0,0,1);
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,1);
 }
 
 .page-container {
   max-width: 100%;
+
+  &.top-container {
+    height: 100vh;
+  }
+
+  &.bottom-container {
+    z-index: 1;
+    background: #fff;
+  }
 }
 
 .backdrop {
   background: #000;
   position: fixed;
   width: 100%;
+  height: 100vh;
 }
 
 .header-image-container {
   position: relative;
   background: #000;
   overflow: hidden;
-  height: 30rem;
-  .fade-left, .fade-right {
+
+  .fade-left,
+  .fade-right {
     position: relative;
-    height: 30rem;
+    height: 100%;
     z-index: 1;
+
     div {
       position: absolute;
       width: 2rem;
-      height: 30rem;
+      height: 100%;
     }
   }
+
   .fade-left div {
     left: 0;
     top: 0;
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
   }
+
   .fade-right div {
     right: 0;
     top: 0;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
   }
+
   .header-image {
     position: relative;
     height: 100%;
+
     .image-depth {
       @extend .depth;
       position: absolute;
@@ -55,46 +157,112 @@ body {
       right: 0;
       bottom: 0;
     }
+
     img {
       height: inherit;
     }
   }
+
   .rotating-flavor {
     position: absolute;
     color: #fff;
     font-size: 10rem;
     transition: opacity 1s linear;
     text-align: center;
+    z-index: 2;
+    font-family: ROBOTECH;
   }
 }
 
 .page-content {
+  position: relative;
   background: #fff;
   z-index: 1;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
 }
 
-.youtube, .linkedin, .github, .contact {
-
-}
-
-.youtube, .linkedin, .github {
+.github,
+.linkedin,
+.youtube {
   img {
     cursor: pointer;
     height: 5rem;
     width: 5rem;
-    transition: opacity .25s linear;
-    &.youtube-thumbnail, &.linkedin-thumbnail, &.github-thumbnail {
+    transition: opacity 0.25s linear;
+
+    &.github-thumbnail,
+    &.linkedin-thumbnail,
+    &.youtube-thumbnail {
       position: absolute;
       opacity: 0;
       z-index: 1;
     }
+
     &:hover {
-      &.youtube-thumbnail, &.linkedin-thumbnail, &.github-thumbnail {
+      &.github-thumbnail,
+      &.linkedin-thumbnail,
+      &.youtube-thumbnail {
         opacity: 1;
       }
     }
   }
+}
+
+.ryan-image {
+  img {
+    // @extend .shadow;
+    width: 15rem;
+    border-radius: 10rem;
+    // border: 2px solid #000;
+  }
+}
+
+.web-description {
+  padding: 0 0 0 5rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  p {
+    margin: .5rem 0;
+  }
+}
+
+/*effect-box*/
+button.effect-box:after,
+button.effect-box:before {
+	content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+
+}
+
+button.effect-box:before {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  -webkit-transform: scale(1,0);
+	transform: scale(1,0);
+}
+
+button.effect-box:after {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  -webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+button.effect-box:hover:after,
+button.effect-box:hover:before {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.footer-space img {
+  height: 100%;
+  width: 100%;
 }

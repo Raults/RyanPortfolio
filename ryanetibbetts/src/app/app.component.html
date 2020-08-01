@@ -1,9 +1,12 @@
-<div class="backdrop">
+<div class="backdrop"
+gdAreas="header-image | content-spacer"
+gdRows="2fr 1fr">
   <div class="header-image-container"
+  gdArea="header-image"
   fxLayout="row"
   fxLayoutAlign="center center">
     <div class="fade-left"><div></div></div>
-    <div class="header-image">
+    <div class="header-image" fxLayout="row" fxLayoutAlign="center center">
       <div class="image-depth"></div>
       <img src="../assets/travoltaislost.jpg">
     </div>
@@ -15,11 +18,12 @@
     </div>
     <div class="fade-right"><div></div></div>
   </div>
+  <div gdArea="content-spacer"></div>
 </div>
 
-<div class="page-container"
+<div class="page-container top-container"
 gdAreas="header-image | page-content"
-gdRows="30rem 1fr">
+gdRows="2fr 1fr">
 
   <div
   gdArea="header-image"
@@ -27,9 +31,13 @@ gdRows="30rem 1fr">
   fxLayoutAlign="center center">
   </div>
 
-  <div class="page-content"
+  <div class="page-content shadow"
   gdArea="page-content"
-  gdAreas="youtube linkedin github contact">
+  gdAreas="spacer-left youtube linkedin github spacer-right"
+  gdRows="1fr"
+  gdColumns="1fr 1fr 1fr 1fr 1fr">
+    <div gdArea="spacer-left"></div>
+    <div gdArea="spacer-right"></div>
     <div class="youtube"
     gdArea="youtube"
     fxLayout="column"
@@ -37,7 +45,6 @@ gdRows="30rem 1fr">
       <img src="../assets/youtube-fade.svg">
       <img class="youtube-thumbnail" src="../assets/youtube.svg" >
     </div>
-
     <div class="linkedin"
     gdArea="linkedin"
     fxLayout="column"
@@ -45,7 +52,6 @@ gdRows="30rem 1fr">
       <img src="../assets/linkedin-fade.svg">
       <img class="linkedin-thumbnail" src="../assets/linkedin.svg">
     </div>
-
     <div class="github"
     gdArea="github"
     fxLayout="column"
@@ -53,11 +59,43 @@ gdRows="30rem 1fr">
       <img src="../assets/github-fade.svg">
       <img class="github-thumbnail" src="../assets/github.svg">
     </div>
+  </div>
+</div>
 
-    <div class="contact"
-    gdArea="contact"
+<div class="page-container bottom-container" gdAreas="lower-content">
+  <div class="page-content"
+  gdArea="lower-content"
+  gdAreas="spacer-left ryan-image description description spacer-right
+          | contact contact contact contact contact
+          | footer footer footer footer footer"
+  gdRows="30rem 25rem 15rem"
+  gdColumns="1fr 2fr 2fr 2fr 1fr">
+    <div gdArea="spacer-left"></div>
+    <div gdArea="spacer-right"></div>
+    <div class="ryan-image"
+    gdArea="ryan-image"
     fxLayout="column"
     fxLayoutAlign="center center">
+      <img src="../assets/ew.png" >
+    </div>
+    <div class="web-description"
+    gdArea="description"
+    fxLayout="column"
+    fxLayoutAlign="center start">
+    <p>Hello and Welcome, I'm Ryan Tibbetts</p>
+    <p>This is my fully responsive cutting edge website.&nbsp;&nbsp;
+    Here you can see my capabilities to host a website using AWS and develop a modern and stylish
+    theme using google web development technologies such as Angular and Material.&nbsp;&nbsp;
+    You can also access my other edeavors here such as youtube tutorials, linkedin page,
+    and github repositories.&nbsp;&nbsp; If this website appeals to your creative needs,
+    do not hesitate.&nbsp;&nbsp; Click the contact button below to reach me directly
+    and lets make your ambitions a reality.</p>
+    </div>
+    <div class="contact" gdArea="contact" fxLayout="row" fxLayoutAlign="center start">
+      <button class="effect-box" mat-flat-button>CONTACT</button>
+    </div>
+    <div class="footer-space" gdArea="footer">
+      <img src="../assets/gradient_test1.jpg">
     </div>
   </div>
 </div>
