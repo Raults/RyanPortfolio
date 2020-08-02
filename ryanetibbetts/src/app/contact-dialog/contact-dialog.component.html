@@ -1,0 +1,28 @@
+<div mat-dialog-title
+fxLayout="row"
+fxLayoutAlign="space-between start">
+  <span [ngStyle.xs]="'font-size: 2rem;'"
+        [ngStyle.gt-xs]="'font-size: 4rem;'">Contact Info</span>
+  <div class="close-dialog">
+    <mat-icon matRipple (click)="closeDialog()">close</mat-icon>
+  </div>
+</div>
+<mat-dialog-content gdAreas.xs="email-flavor | email"
+                    gdAreas.gt-xs="email-flavor email"
+                    gdColumns.xs="1fr"
+                    gdColumns.gt-xs="auto 1fr"
+                    gdGap.xs=".25rem"
+                    gdGap.gt-xs="1rem">
+  <span [ngStyle.xs]="'font-size: 1.5rem;'"
+        [ngStyle.gt-xs]="'font-size: 2.5rem;'">Email: </span>
+  <mat-form-field [ngStyle.xs]="'font-size: .75rem;'">
+    <input matInput [(ngModel)]="email">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions
+fxLayout="row"
+fxLayoutAlign="end center">
+  <button class="copy-button effect-box"
+  mat-flat-button
+  [cdkCopyToClipboard]="email" (click)="copySnackbar('Copied','See You Soon')">Copy</button>
+</mat-dialog-actions>

@@ -1,5 +1,6 @@
-// Additional fonts
-
+/********************
+ * Additional fonts *
+ ********************/
 // very wide
 @font-face {
   font-family: aAtmospheric;
@@ -54,32 +55,136 @@
   font-family: lato;
   src: url("assets/fonts/Lato-Regular.ttf");
 }
-// Material Edits
-.contact {
-  padding: 3rem 0 0 0;
-  button {
-    &.mat-flat-button,
-    &.mat-stroked-button,
-    &.mat-raised-button {
-      font-size: 10rem;
-      line-height: 8rem;
-      padding: .5rem 2rem 2rem 2rem;
-      transition: all 0.25s linear;
+/******************
+ * Material Edits *
+ ******************/
+
+button {
+  &.mat-flat-button,
+  &.mat-raised-button,
+  &.mat-stroked-button {
+    transition: all 0.25s linear;
+    background: none;
+    font-family: ROBOTECH;
+    // make text a level above the ripple
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    // change ripple color
+    .mat-ripple div {
+      background: rgba(0, 80, 185,.2);
+    }
+
+    .mat-button-focus-overlay {
       background: none;
-      color: linear-gradient(0deg, rgba(22,30,68,1) 0%, 100%);
-      font-family: ROBOTECH;
     }
   }
 }
-// Website SCSS
+
+.mat-dialog-container {
+  overflow: hidden !important;
+}
+
+.mat-dialog-title {
+  font-family: ROBOTECH;
+  height: auto;
+
+  span:first-child {
+    font-size: 4rem;
+  }
+
+  .close-dialog {
+    position: relative;
+
+    .mat-icon {
+      overflow: visible;
+      cursor: pointer;
+      color: #A6A6A6;
+      position: absolute;
+      top: -1.25rem;
+      right: -1.25rem;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.mat-dialog-content {
+  span {
+    &:first-child {
+      font-family: ROBOTECH;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.mat-dialog-actions {
+  padding: 0 0 1rem 0 !important;
+
+  button.copy-button {
+    font-size: 2rem;
+  }
+}
+/******************
+ * Button Effects *
+ ******************/
+
+button.effect-box:after,
+button.effect-box:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+button.effect-box:before {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+}
+
+button.effect-box:after {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+button.effect-box:hover:after,
+button.effect-box:hover:before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/****************
+ * Website SCSS *
+ ****************/
+
 body,
 html {
   height: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
   margin: 0;
   font-family: lato;
+  min-width: 20rem;
 }
 
 .depth {
@@ -96,6 +201,7 @@ body {
 }
 
 .page-container {
+  min-width: inherit;
   max-width: 100%;
 
   &.top-container {
@@ -109,6 +215,7 @@ body {
 }
 
 .backdrop {
+  min-width: 20rem;
   background: #000;
   position: fixed;
   width: 100%;
@@ -166,8 +273,7 @@ body {
   .rotating-flavor {
     position: absolute;
     color: #fff;
-    font-size: 10rem;
-    transition: opacity 1s linear;
+    transition: all 1s linear;
     text-align: center;
     z-index: 2;
     font-family: ROBOTECH;
@@ -183,11 +289,13 @@ body {
 .github,
 .linkedin,
 .youtube {
+  .mat-ripple-element {
+    z-index: 2;
+  }
+
   img {
     cursor: pointer;
-    height: 5rem;
-    width: 5rem;
-    transition: opacity 0.25s linear;
+    transition: all 0.25s linear;
 
     &.github-thumbnail,
     &.linkedin-thumbnail,
@@ -216,50 +324,12 @@ body {
   }
 }
 
-.web-description {
-  padding: 0 0 0 5rem;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  p {
-    margin: .5rem 0;
-  }
+.web-description p {
+  margin: 0.5rem 0;
 }
 
-/*effect-box*/
-button.effect-box:after,
-button.effect-box:before {
-	content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-
-}
-
-button.effect-box:before {
-  border-left: 1px solid;
-  border-right: 1px solid;
-  -webkit-transform: scale(1,0);
-	transform: scale(1,0);
-}
-
-button.effect-box:after {
-  border-bottom: 1px solid;
-  border-top: 1px solid;
-  -webkit-transform: scale(0,1);
-	transform: scale(0,1);
-}
-
-button.effect-box:hover:after,
-button.effect-box:hover:before {
-  opacity: 1;
-	-webkit-transform: scale(1);
-	transform: scale(1);
+.contact {
+  button.contact-button {}
 }
 
 .footer-space img {

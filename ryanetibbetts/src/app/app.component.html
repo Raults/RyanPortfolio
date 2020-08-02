@@ -4,16 +4,21 @@ gdRows="2fr 1fr">
   <div class="header-image-container"
   gdArea="header-image"
   fxLayout="row"
-  fxLayoutAlign="center center">
+  fxLayoutAlign="center center"
+  [ngStyle.xs]="'font-size: 4rem;'"
+  [ngStyle.sm]="'font-size: 6rem;'"
+  [ngStyle.gt-sm]="'font-size: 10rem;'">
     <div class="fade-left"><div></div></div>
     <div class="header-image" fxLayout="row" fxLayoutAlign="center center">
       <div class="image-depth"></div>
       <img src="../assets/travoltaislost.jpg">
     </div>
-    <div class="rotating-flavor" [style]="flavorSwap?'opacity:1':'opacity:0'">
+    <div class="rotating-flavor"
+    [style]="flavorSwap?'opacity:1':'opacity:0'">
       {{ flavorArrA[currentFlavorA] }}
     </div>
-    <div class="rotating-flavor" [style]="flavorSwap?'opacity:0':'opacity:1'">
+    <div class="rotating-flavor"
+    [style]="flavorSwap?'opacity:0':'opacity:1'">
       {{ flavorArrB[currentFlavorB] }}
     </div>
     <div class="fade-right"><div></div></div>
@@ -33,45 +38,69 @@ gdRows="2fr 1fr">
 
   <div class="page-content shadow"
   gdArea="page-content"
-  gdAreas="spacer-left youtube linkedin github spacer-right"
+  gdAreas.xs="youtube linkedin github"
+  gdAreas.gt-xs="spacer-left youtube linkedin github spacer-right"
   gdRows="1fr"
-  gdColumns="1fr 1fr 1fr 1fr 1fr">
-    <div gdArea="spacer-left"></div>
-    <div gdArea="spacer-right"></div>
-    <div class="youtube"
+  gdColumns.xs="2fr 1fr 2fr"
+  gdColumns.gt-xs="1fr 1fr 1fr 1fr 1fr">
+    <div gdArea="spacer-left" fxHide.xs></div>
+    <div gdArea="spacer-right" fxHide.xs></div>
+    <a class="youtube"
+    href="https://www.youtube.com/channel/UCtdIELIZlRLJqrKp6vTa50g"
     gdArea="youtube"
     fxLayout="column"
-    fxLayoutAlign="center center">
-      <img src="../assets/youtube-fade.svg">
-      <img class="youtube-thumbnail" src="../assets/youtube.svg" >
-    </div>
-    <div class="linkedin"
+    fxLayoutAlign="center center"
+    matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
+        <img src="../assets/youtube-fade.svg"
+        [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+        [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+        <img class="youtube-thumbnail" src="../assets/youtube.svg"
+        [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+        [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+    </a>
+    <a class="linkedin"
+    href="https://www.linkedin.com/in/ryan-tibbetts-a754776b/"
     gdArea="linkedin"
     fxLayout="column"
-    fxLayoutAlign="center center">
-      <img src="../assets/linkedin-fade.svg">
-      <img class="linkedin-thumbnail" src="../assets/linkedin.svg">
-    </div>
-    <div class="github"
+    fxLayoutAlign="center center"
+    matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
+      <img src="../assets/linkedin-fade.svg"
+      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+      <img class="linkedin-thumbnail" src="../assets/linkedin.svg"
+      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+    </a>
+    <a class="github"
+    href="https://github.com/Raults/RyanPortfolio"
     gdArea="github"
     fxLayout="column"
-    fxLayoutAlign="center center">
-      <img src="../assets/github-fade.svg">
-      <img class="github-thumbnail" src="../assets/github.svg">
-    </div>
+    fxLayoutAlign="center center"
+    matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
+      <img src="../assets/github-fade.svg"
+      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+      <img class="github-thumbnail" src="../assets/github.svg"
+      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
+    </a>
   </div>
 </div>
 
 <div class="page-container bottom-container" gdAreas="lower-content">
   <div class="page-content"
   gdArea="lower-content"
-  gdAreas="spacer-left ryan-image description description spacer-right
-          | contact contact contact contact contact
-          | footer footer footer footer footer"
-  gdRows="30rem 25rem 15rem"
-  gdColumns="1fr 2fr 2fr 2fr 1fr">
-    <div gdArea="spacer-left"></div>
-    <div gdArea="spacer-right"></div>
+  gdAreas.lt-md="ryan-image | description | contact | footer"
+  gdAreas.gt-sm="spacer-left ryan-image description description spacer-right
+                | contact contact contact contact contact
+                | footer footer footer footer footer"
+  gdRows.xs="15rem auto 6rem"
+  gdRows.sm="15rem auto 8rem"
+  gdRows.gt-sm="30rem 25rem 15rem"
+  gdColumns.lt-md="1fr"
+  gdColumns.gt-sm="1fr 2fr 2fr 2fr 1fr">
+    <div gdArea="spacer-left" fxHide.lt-md></div>
+    <div gdArea="spacer-right" fxHide.lt-md></div>
     <div class="ryan-image"
     gdArea="ryan-image"
     fxLayout="column"
@@ -81,7 +110,10 @@ gdRows="2fr 1fr">
     <div class="web-description"
     gdArea="description"
     fxLayout="column"
-    fxLayoutAlign="center start">
+    fxLayoutAlign="center start"
+    [ngStyle.xs]="'font-size: 1rem; line-height: 1.5rem; padding: 2rem;'"
+    [ngStyle.sm]="'font-size: 1rem; line-height: 1.5rem; padding: 2rem 5rem;'"
+    [ngStyle.gt-sm]="'font-size: 1.1rem; line-height: 2rem; padding: 0 0 0 5rem;'">
     <p>Hello and Welcome, I'm Ryan Tibbetts</p>
     <p>This is my fully responsive cutting edge website.&nbsp;&nbsp;
     Here you can see my capabilities to host a website using AWS and develop a modern and stylish
@@ -91,8 +123,16 @@ gdRows="2fr 1fr">
     do not hesitate.&nbsp;&nbsp; Click the contact button below to reach me directly
     and lets make your ambitions a reality.</p>
     </div>
-    <div class="contact" gdArea="contact" fxLayout="row" fxLayoutAlign="center start">
-      <button class="effect-box" mat-flat-button>CONTACT</button>
+    <div class="contact"
+    gdArea="contact"
+    fxLayout="row"
+    fxLayoutAlign="center start"
+    [ngStyle.lt-md]="'padding: 0;'"
+    [ngStyle.gt-sm]="'padding: 3rem 0 0 0;'">
+      <button class="contact-button effect-box" mat-flat-button (click)="openDialog()"
+      [ngStyle.xs]="'font-size: 4rem; line-height: 2rem; padding: .1rem .5rem .75rem .5rem;'"
+      [ngStyle.sm]="'font-size: 6rem; line-height: 4rem; padding: .25rem 1rem 1rem 1rem;'"
+      [ngStyle.gt-sm]="'font-size: 10rem; line-height: 8rem; padding: .5rem 2rem 2rem 2rem;'">CONTACT</button>
     </div>
     <div class="footer-space" gdArea="footer">
       <img src="../assets/gradient_test1.jpg">

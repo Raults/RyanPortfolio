@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactDialogComponent } from "./contact-dialog/contact-dialog.component";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // title = 'ryanetibbetts';
+
+  constructor(private dialog: MatDialog) {}
+
   public currentFlavorA = 0;
   public currentFlavorB = 0;
   public flavorArrA = ['Welcome', 'See Greatness', 'Responsive Design', 'Material Design' ,'Create Your Website', 'Now Is The Time'];
@@ -39,4 +43,13 @@ export class AppComponent {
       console.log(this.flavorSwap);
     }, 5000);
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ContactDialogComponent, {
+      autoFocus: false
+    });
+
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+
 }
