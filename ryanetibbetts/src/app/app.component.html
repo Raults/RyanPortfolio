@@ -38,13 +38,13 @@ gdRows="2fr 1fr">
 
   <div class="page-content shadow"
   gdArea="page-content"
-  gdAreas.xs="youtube linkedin github"
-  gdAreas.gt-xs="spacer-left youtube linkedin github spacer-right"
+  gdAreas.lt-md="youtube linkedin github"
+  gdAreas.gt-sm="spacer-left youtube linkedin github spacer-right"
   gdRows="1fr"
-  gdColumns.xs="2fr 1fr 2fr"
-  gdColumns.gt-xs="1fr 1fr 1fr 1fr 1fr">
-    <div gdArea="spacer-left" fxHide.xs></div>
-    <div gdArea="spacer-right" fxHide.xs></div>
+  gdColumns.lt-md="2fr 1fr 2fr"
+  gdColumns.gt-sm="1fr 1fr 1fr 1fr 1fr">
+    <div gdArea="spacer-left" fxHide.lt-md></div>
+    <div gdArea="spacer-right" fxHide.lt-md></div>
     <a class="youtube"
     href="https://www.youtube.com/channel/UCtdIELIZlRLJqrKp6vTa50g"
     gdArea="youtube"
@@ -52,10 +52,12 @@ gdRows="2fr 1fr">
     fxLayoutAlign="center center"
     matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
         <img src="../assets/youtube-fade.svg"
-        [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+        [ngStyle.xs]="'width: 3rem; height: 3rem'"
+        [ngStyle.sm]="'width: 5rem; height: 5rem'"
         [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
         <img class="youtube-thumbnail" src="../assets/youtube.svg"
-        [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+        [ngStyle.xs]="'width: 3rem; height: 3rem'"
+        [ngStyle.sm]="'width: 5rem; height: 5rem'"
         [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
     </a>
     <a class="linkedin"
@@ -65,10 +67,12 @@ gdRows="2fr 1fr">
     fxLayoutAlign="center center"
     matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
       <img src="../assets/linkedin-fade.svg"
-      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.xs]="'width: 3rem; height: 3rem'"
+      [ngStyle.sm]="'width: 5rem; height: 5rem'"
       [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
       <img class="linkedin-thumbnail" src="../assets/linkedin.svg"
-      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.xs]="'width: 3rem; height: 3rem'"
+      [ngStyle.sm]="'width: 5rem; height: 5rem'"
       [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
     </a>
     <a class="github"
@@ -78,10 +82,12 @@ gdRows="2fr 1fr">
     fxLayoutAlign="center center"
     matRipple [matRippleColor]="'rgba(255, 255, 255, .2)'">
       <img src="../assets/github-fade.svg"
-      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.xs]="'width: 3rem; height: 3rem'"
+      [ngStyle.sm]="'width: 5rem; height: 5rem'"
       [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
       <img class="github-thumbnail" src="../assets/github.svg"
-      [ngStyle.lt-md]="'width: 3rem; height: 3rem'"
+      [ngStyle.xs]="'width: 3rem; height: 3rem'"
+      [ngStyle.sm]="'width: 5rem; height: 5rem'"
       [ngStyle.gt-sm]="'width: 7rem; height: 7rem'">
     </a>
   </div>
